@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anna Rozalska — Producer</title>
+    <meta
+      name="description"
+      content="Anna Rozalska is a producer and entrepreneur working across film, television, talent management, and international co-production between Europe and the United States."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #f7f4ee;
+        --bg-soft: #f1ede6;
+        --surface: rgba(255, 255, 255, 0.58);
+        --text: #1d1b18;
+        --muted: #69635b;
+        --line: rgba(29, 27, 24, 0.12);
+        --accent: #8b7455;
+        --shadow: 0 18px 50px rgba(40, 33, 24, 0.08);
+        --max: 1180px;
+        --radius: 24px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: radial-gradient(circle at top left, #fbf8f2 0%, var(--bg) 46%, #f2eee7 100%);
+        color: var(--text);
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      .page-frame {
+        position: fixed;
+        inset: 22px;
+        border: 1px solid rgba(29, 27, 24, 0.08);
+        pointer-events: none;
+        border-radius: 30px;
+        z-index: 0;
+      }
+
+      .container {
+        width: min(calc(100% - 48px), var(--max));
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+      }
+
+      .topbar {
+        padding: 28px 0 0;
+      }
+
+      .topbar-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        padding: 18px 24px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.5);
+        backdrop-filter: blur(14px);
+        box-shadow: 0 10px 35px rgba(40, 33, 24, 0.04);
+      }
+
+      .brand {
+        font-size: 0.78rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--muted);
+        white-space: nowrap;
+      }
+
+      nav {
+        display: flex;
+        gap: 22px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+
+      nav a {
+        font-size: 0.9rem;
+        color: var(--muted);
+        transition: color 0.2s ease, transform 0.2s ease;
+      }
+
+      nav a:hover {
+        color: var(--text);
+        transform: translateY(-1px);
+      }
+
+      .hero {
+        min-height: 92vh;
+        display: grid;
+        align-items: center;
+        padding: 72px 0 48px;
+      }
+
+      .hero-panel {
+        grid-template-columns: 1fr 420px;
+        display: grid;
+        grid-template-columns: 1.3fr 0.7fr;
+        gap: 42px;
+        padding: 64px;
+        border: 1px solid var(--line);
+        border-radius: calc(var(--radius) + 8px);
+        background: linear-gradient(180deg, rgba(255,255,255,0.72), rgba(255,255,255,0.42));
+        box-shadow: var(--shadow);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-portrait {
+        position: relative;
+        border-radius: 20px;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+        height: 100%;
+      }
+
+      .hero-portrait img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .hero-panel::before {
+        content: "";
+        position: absolute;
+        inset: auto -10% -35% auto;
+        width: 420px;
+        height: 420px;
+        background: radial-gradient(circle, rgba(139, 116, 85, 0.14) 0%, rgba(139, 116, 85, 0) 72%);
+        pointer-events: none;
+      }
+
+      .eyebrow {
+        font-size: 0.78rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 16px;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-family: "Cormorant Garamond", Georgia, serif;
+        letter-spacing: -0.02em;
+        margin: 0;
+        font-weight: 600;
+      }
+
+      h1 {
+        font-size: clamp(3.6rem, 7vw, 6.5rem);
+        line-height: 0.93;
+        max-width: 8ch;
+      }
+
+      .title-line {
+        margin-top: 28px;
+        font-size: 1.1rem;
+        max-width: 40rem;
+        color: var(--muted);
+      }
+
+      .hero-copy {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 42px;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        margin-top: 8px;
+      }
+
+      .button,
+      .button-secondary {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 48px;
+        padding: 0 20px;
+        border-radius: 999px;
+        font-size: 0.92rem;
+        transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      }
+
+      .button {
+        background: var(--text);
+        color: #f6f3ee;
+        box-shadow: 0 10px 24px rgba(29, 27, 24, 0.12);
+      }
+
+      .button-secondary {
+        border: 1px solid var(--line);
+        color: var(--text);
+        background: rgba(255,255,255,0.4);
+      }
+
+      .button:hover,
+      .button-secondary:hover {
+        transform: translateY(-1px);
+      }
+
+      .hero-aside {
+        order: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        gap: 20px;
+      }
+
+      .info-card {
+        padding: 28px;
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        background: rgba(255,255,255,0.45);
+      }
+
+      .info-label {
+        font-size: 0.74rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 10px;
+      }
+
+      .info-value {
+        font-size: 1rem;
+        color: var(--text);
+      }
+
+      section {
+        padding: 56px 0;
+      }
+
+      .section-header {
+        display: grid;
+        grid-template-columns: 240px 1fr;
+        gap: 24px;
+        margin-bottom: 26px;
+        align-items: start;
+      }
+
+      .section-number {
+        font-size: 0.78rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--accent);
+        padding-top: 12px;
+      }
+
+      h2 {
+        font-size: clamp(2.3rem, 4vw, 3.6rem);
+        line-height: 1;
+        margin-bottom: 12px;
+      }
+
+      .section-intro {
+        color: var(--muted);
+        max-width: 42rem;
+        font-size: 1.03rem;
+      }
+
+      .panel {
+        padding: 38px;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: var(--surface);
+        box-shadow: 0 10px 32px rgba(40, 33, 24, 0.04);
+      }
+
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: 28px;
+      }
+
+      .about-text {
+        font-size: 1.04rem;
+        color: var(--text);
+      }
+
+      .quote {
+        display: flex;
+        align-items: end;
+        min-height: 100%;
+        padding: 34px;
+        background: linear-gradient(180deg, rgba(255,255,255,0.62), rgba(241,237,230,0.85));
+      }
+
+      .quote p {
+        margin: 0;
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-size: 2rem;
+        line-height: 1.08;
+      }
+
+      .works-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .work-item {
+        gap: 16px;
+        padding: 24px;
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        background: rgba(255,255,255,0.46);
+        min-height: 140px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .work-item:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 28px rgba(40, 33, 24, 0.06);
+      }
+
+      .work-type {
+        font-size: 0.76rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+
+      .work-title {
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-size: 2rem;
+        line-height: 1;
+        margin-top: 22px;
+      }
+
+      .work-note {
+        font-size: 0.95rem;
+        color: var(--muted);
+        max-width: 26ch;
+      }
+
+      .presence-layout {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 22px;
+      }
+
+      .presence-points {
+        display: grid;
+        gap: 16px;
+      }
+
+      .presence-point {
+        padding: 22px 24px;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: rgba(255,255,255,0.42);
+      }
+
+      .presence-point strong {
+        display: block;
+        margin-bottom: 6px;
+        font-weight: 600;
+      }
+
+      .contact-panel {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 24px;
+        align-items: center;
+      }
+
+      .contact-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+      }
+
+      .contact-link {
+        min-width: 160px;
+        padding: 16px 18px;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: rgba(255,255,255,0.52);
+        transition: transform 0.2s ease, border-color 0.2s ease;
+      }
+
+      .contact-link:hover {
+        transform: translateY(-2px);
+        border-color: rgba(29, 27, 24, 0.24);
+      }
+
+      .contact-link small {
+        display: block;
+        color: var(--muted);
+        margin-bottom: 6px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        font-size: 0.72rem;
+      }
+
+      footer {
+        padding: 18px 0 48px;
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      @media (max-width: 980px) {
+        .hero-panel,
+        .about-grid,
+        .presence-layout,
+        .contact-panel,
+        .section-header {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-panel {
+          padding: 38px;
+        }
+
+        .contact-panel {
+          align-items: start;
+        }
+      }
+
+      @media (max-width: 720px) {
+        .page-frame {
+          inset: 12px;
+          border-radius: 20px;
+        }
+
+        .container {
+          width: min(calc(100% - 24px), var(--max));
+        }
+
+        .topbar-inner {
+          border-radius: 26px;
+          padding: 18px;
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        nav {
+          justify-content: flex-start;
+          gap: 14px 18px;
+        }
+
+        .hero {
+          padding-top: 40px;
+          min-height: auto;
+        }
+
+        .hero-panel {
+          padding: 28px;
+          gap: 28px;
+        }
+
+        h1 {
+          font-size: clamp(2.9rem, 16vw, 4.2rem);
+        }
+
+        .title-line,
+        .section-intro,
+        .about-text {
+          font-size: 1rem;
+        }
+
+        .works-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .panel,
+        .quote {
+          padding: 26px;
+        }
+
+        .quote p {
+          font-size: 1.6rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-frame" aria-hidden="true"></div>
+
+    <header class="topbar">
+      <div class="container">
+        <div class="topbar-inner">
+          <div class="brand">Anna Rozalska</div>
+          <nav aria-label="Section navigation">
+            <a href="#about">About</a>
+            <a href="#work">Selected Work</a>
+            <a href="#presence">Industry Presence</a>
+            <a href="#contact">Contact</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="top">
+        <div class="container">
+          <div class="hero-panel">
+            <div class="hero-copy">
+              <div>
+                <div class="eyebrow">Producer · Film · Television · International Co-Production</div>
+                <h1>Anna Rozalska</h1>
+                <p class="title-line">
+                  Producer and entrepreneur working across film, television, talent management,
+                  and international co-production between Europe and the United States.
+                </p>
+              </div>
+
+              <div class="hero-actions">
+                <a class="button" href="#contact">View Links</a>
+                <a class="button-secondary" href="#work">Selected Work</a>
+              </div>
+            </div>
+
+            <aside class="hero-aside" aria-label="Professional summary">
+              <div class="info-card">
+                <div class="info-label">Focus</div>
+                <div class="info-value">
+                  Feature films, television projects, talent management, and international creative partnerships.
+                </div>
+              </div>
+              <div class="info-card">
+                <div class="info-label">Company</div>
+                <div class="info-value">Co-founder of Match&amp;Spark</div>
+              </div>
+              <div class="info-card">
+                <div class="info-label">Positioning</div>
+                <div class="info-value">European perspective, international execution.</div>
+              </div>
+            </aside>
+            <div class="hero-portrait">
+              <img src="portrait.jpg" alt="Anna Rozalska portrait" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-number">01 / About</div>
+            <div>
+              <h2>A profile built on international reach, editorial instinct, and long-term collaboration.</h2>
+              <p class="section-intro">
+                Clear positioning, selective credits, and a professional focus that moves between
+                Europe and the United States without losing specificity.
+              </p>
+            </div>
+          </div>
+
+          <div class="about-grid">
+            <div class="panel about-text">
+              <p>
+                Anna Rozalska is a producer and entrepreneur working across independent and
+                international productions. She is the co-founder of Match&amp;Spark, a talent
+                management and production company, and has developed projects spanning Europe
+                and the United States.
+              </p>
+              <p>
+                Her work includes feature films, documentaries, and television projects, as well
+                as leadership in original productions and co-productions. Her profile sits at the
+                intersection of creative development, production strategy, and international market awareness.
+              </p>
+            </div>
+
+            <div class="panel quote">
+              <p>
+                Building projects that travel internationally without losing cultural identity.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="work">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-number">02 / Selected Work</div>
+            <div>
+              <h2>Selected work.</h2>
+              <p class="section-intro">
+                A curated selection that reflects range across feature film, documentary, and television.
+              </p>
+            </div>
+          </div>
+
+          <div class="works-grid">
+            <article class="work-item">
+              <div>
+                <div class="work-type">Feature Film</div>
+                <div class="work-title">High Life</div>
+              </div>
+              <div class="work-note">A major international feature credit with strong auteur positioning.</div>
+            </article>
+            <article class="work-item">
+              <div>
+                <div class="work-type">Documentary</div>
+                <div class="work-title">Who Will Write Our History</div>
+              </div>
+              <div class="work-note">A historical documentary title signaling range beyond fiction.</div>
+            </article>
+            <article class="work-item">
+              <div>
+                <div class="work-type">Feature Film</div>
+                <div class="work-title">Arbitrage</div>
+              </div>
+              <div class="work-note">A commercially visible feature title within an international-facing body of work.</div>
+            </article>
+            <article class="work-item">
+              <div>
+                <div class="work-type">Feature Film</div>
+                <div class="work-title">Vamps</div>
+              </div>
+              <div class="work-note">A feature credit demonstrating versatility across tone and audience.</div>
+            </article>
+            <article class="work-item">
+              <div>
+                <div class="work-type">Television</div>
+                <div class="work-title">Clangor</div>
+              </div>
+              <div class="work-note">A television credit reinforcing strength in serialized storytelling.</div>
+            </article>
+            <article class="work-item">
+              <div>
+                <div class="work-type">Television</div>
+                <div class="work-title">Raven 2</div>
+              </div>
+              <div class="work-note">A screen credit that extends the profile into established TV production space.</div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="presence">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-number">03 / Industry Presence</div>
+            <div>
+              <h2>Industry presence.</h2>
+              <p class="section-intro">
+                A professional profile shaped by production, talent strategy, and international collaboration.
+              </p>
+            </div>
+          </div>
+
+          <div class="presence-layout">
+            <div class="panel">
+              <p>
+                Anna works across talent management, production, and international co-production.
+                She has appeared as a speaker and industry representative at film and television events
+                and is known for connecting Central and Eastern European talent with wider international markets.
+              </p>
+            </div>
+
+            <div class="presence-points">
+              <div class="presence-point">
+                <strong>Talent &amp; Development</strong>
+                Building relationships between creators, companies, and projects with long-term potential.
+              </div>
+              <div class="presence-point">
+                <strong>International Co-Production</strong>
+                Working across European and US frameworks with creative and strategic fluency.
+              </div>
+              <div class="presence-point">
+                <strong>Screen Industries</strong>
+                Active across film, television, and entrepreneurial production environments.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-number">04 / Contact &amp; Links</div>
+            <div>
+              <h2>Contact &amp; links.</h2>
+              <p class="section-intro">
+                Direct users toward verified professional platforms and company information.
+              </p>
+            </div>
+          </div>
+
+          <div class="panel contact-panel">
+            <div>
+              <p>
+                For verified screen credits, company context, and public professional references,
+                use the links below.
+              </p>
+            </div>
+
+            <div class="contact-links">
+              <a class="contact-link" href="https://www.imdb.com/name/nm3837777/" target="_blank" rel="noopener noreferrer">
+                <small>Profile</small>
+                IMDb Profile
+              </a>
+              <a class="contact-link" href="https://matchandspark.com/" target="_blank" rel="noopener noreferrer">
+                <small>Company</small>
+                Match&amp;Spark
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div>Anna Rozalska — Film &amp; TV Producer</div>
+      </div>
+    </footer>
+  </body>
+</html>
